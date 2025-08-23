@@ -1,9 +1,13 @@
 module.exports = {
-  content: [
-    "./client/**/*.{html,js,jsx,ts,tsx}",
-    "./imports/**/*.{html,js,jsx,ts,tsx}",
+  purge: [
+    './client/**/*.{js,jsx,ts,tsx,html}',
+    './imports/**/*.{js,jsx,ts,tsx,html}',
   ],
+  darkMode: false,
   theme: {
+    extend: {},
+  },
+  variants: {
     extend: {},
   },
   plugins: [],
