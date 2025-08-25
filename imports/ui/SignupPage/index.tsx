@@ -52,6 +52,15 @@ const SignupPage: React.FC<SignupPageProp> = () => {
             return errorResponse(error as Meteor.Error, "Error creating user")
         }
 
+        Meteor.loginWithPassword(cleanedEmail, password, (error?: any) => {
+            setLoggingin(false)
+            if(error){
+                return errorResponse(error, "Could not log in after sign up")
+            }
+
+            navigate(publicRoutes.home.path)
+        });
+
         message.success("User created successfully")
     }
             // Aquí iría la lógica para manejar el registro del usuarioº    

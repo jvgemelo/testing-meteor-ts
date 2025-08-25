@@ -1,6 +1,6 @@
-import { HeartOutlined } from '@ant-design/icons';
-import { formatToHumanDate } from '@netsu/js-utils';
-import { Avatar, Button, Card, Space, Typography } from 'antd';
+import { DeleteOutlined, HeartOutlined } from '@ant-design/icons';
+import { formatToHumanDate, limitText } from '@netsu/js-utils';
+import { Avatar, Button, Card, Popconfirm, Space, Typography } from 'antd';
 import React from 'react';
 import { MiniBrowsePagePostModel, MiniBrowsePageUserProfileModel } from '../..';
 import { AppUserIdModel } from '/imports/ui/App';
@@ -21,6 +21,16 @@ const PostCard: React.FC<PostCardProps> = ({post ,
              <HeartOutlined/>
         </Button>,
     ]
+
+    if(postUser.userId === userId){
+        postActions.push(
+        <Popconfirm title="Are you sure you want to delete this post?" okText="Yes" cancelText="No" >
+            <Button type='text' key="delete" danger>
+                <DeleteOutlined/>
+            </Button>
+         </Popconfirm>
+        )
+    }
 
     return (
         <Card actions={postActions} style={{ minWidth: 300 }}>
