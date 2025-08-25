@@ -57,6 +57,13 @@ const App: React.FC = () => {
             })}
           </Route>
         ))}
+          {Object.values(publicRoutes).map((route: any) => (
+            <Route key={route.path} path={route.path}>
+              {React.cloneElement(route.element, {
+                userId,
+              })}
+            </Route>
+          ))}
       </Switch>
 
       <Button onClick={() => { Meteor.logout() }}>
