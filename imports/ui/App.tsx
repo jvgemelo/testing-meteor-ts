@@ -27,8 +27,8 @@ const App: React.FC<App> = () => {
     return (
       <div>
         <h1 className="text-red-400 border-black bg-black">No estas logeado!</h1>
-        <Hello />
-        <Info />
+        {/* <Hello />
+        <Info /> */}
         <Switch>
           {Object.values(publicRoutes).map((route: any) => (
             <Route key={route.path} path={route.path}>

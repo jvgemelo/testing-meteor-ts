@@ -5,11 +5,16 @@ import Shoes from "/imports/ui/Shoes";
 import HomePage from "/imports/ui/HomePage";
 import LoginPage from "/imports/ui/LoginPage";
 import NotFoundPage from "/imports/ui/NotFoundPage";
+import SignupPage from "/imports/ui/SignupPage";
 
 export const publicRoutes = {
-    loading : {   
-        path: "/loading",
+    login : {   
+        path: "/login",
         element: ( <LoginPage /> ) as React.ReactNode,
+    },
+    signup : {   
+        path: "/signup",
+        element: ( <SignupPage /> ) as React.ReactNode,
     },
     home : {
         path: "/",
