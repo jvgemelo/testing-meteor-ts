@@ -11,3 +11,11 @@ interface PostModel {
 }
 
 export default PostModel
+
+// GET METHODS 
+
+// SET METHODS
+
+export interface MethodSetPostCreateModel{
+    text: string;
+}
