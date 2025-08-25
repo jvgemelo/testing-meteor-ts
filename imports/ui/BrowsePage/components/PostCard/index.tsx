@@ -2,14 +2,20 @@ import { HeartOutlined } from '@ant-design/icons';
 import { formatToHumanDate } from '@netsu/js-utils';
 import { Avatar, Button, Card, Space, Typography } from 'antd';
 import React from 'react';
-import { MiniBrowsePagePostModel } from '../..';
+import { MiniBrowsePagePostModel, MiniBrowsePageUserProfileModel } from '../..';
+import { AppUserIdModel } from '/imports/ui/App';
 
 interface PostCardProps {
     post: MiniBrowsePagePostModel;
+    userId?: AppUserIdModel;
+    postUser: MiniBrowsePageUserProfileModel;
 }
 
 
-const PostCard: React.FC<PostCardProps> = ({post}) => {
+const PostCard: React.FC<PostCardProps> = ({post ,
+    userId,
+    postUser
+}) => {
     const postActions = [
         <Button type='text' key="like">
              <HeartOutlined/>
@@ -28,7 +34,7 @@ const PostCard: React.FC<PostCardProps> = ({post}) => {
                         size={"large"}
                         gap={4}
                     >
-                        Jack
+                    {postUser.username}
                     </Avatar>
                 }
                 description={
@@ -37,7 +43,7 @@ const PostCard: React.FC<PostCardProps> = ({post}) => {
                         <Typography> {formatToHumanDate(post.createdAt)}
                             By{" "}
                             <Button type="link">
-                                Jack
+                                {postUser.username}
                             </Button>
                         </Typography>
                     </Space>
