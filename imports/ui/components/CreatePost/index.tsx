@@ -20,11 +20,11 @@ const CreatePost: React.FC<CreatePostProps> = ({ show, setShow }) => {
 
         const cleanedText = postText.trim();
 
-        if(!cleanedText.length > MAX_POST_LENGTH){
+        if(cleanedText.length > MAX_POST_LENGTH){
             return message.error(`Post text cannot exceed ${MAX_POST_LENGTH} characters`);
         }
 
-        
+
     }
 
     return (
