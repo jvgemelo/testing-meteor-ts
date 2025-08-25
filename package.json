@@ -8,6 +8,7 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.0.0",
     "@babel/runtime": "^7.23.5",
     "@netsu/js-utils": "^2.1.0",
     "@swc/helpers": "^0.5.17",
